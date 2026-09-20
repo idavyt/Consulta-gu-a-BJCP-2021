@@ -714,6 +714,8 @@ footer{
   text-align:center;
 }
 </style>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#B4651A">
 </head>
 <body>
 
@@ -1383,6 +1385,13 @@ footer{
   populateSelects();
   render(DATA);
 })();
+</script>
+<script>
+if('serviceWorker' in navigator){
+  window.addEventListener('load', function(){
+    navigator.serviceWorker.register('service-worker.js').catch(function(){});
+  });
+}
 </script>
 </body>
 </html>
